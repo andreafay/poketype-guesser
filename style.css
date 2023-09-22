@@ -100,6 +100,11 @@ body {
 	 		grid-column-start: 1;
 		}
 
+		.poke-name {
+			margin-top: 20px;
+			text-align: center;
+		}
+
 		.stats {
 			position: absolute;
 			grid-row-gap: 0px;
@@ -112,28 +117,32 @@ body {
 		#card {
 			position: absolute;
 			display: grid;
+			border: 3px solid black;
+			border-radius: 10px;
 			top: 15%;
 			left: 22%;
 			width: 50%;
+			height: 268px;
 			margin: 1rem;
+			margin-top: 30px;
 		}
 
 		#card img {
 			display: block;
 			width: 180px;
-			max-height: 200px;
+			max-height: 220px;
 			position: relative;
 			margin: auto;
-			margin-bottom: 0px;
+			margin-top: 0px;
+			margin-bottom: 10px;
 		}
 
 
 	.types {
 		position: absolute;
 		display: flex;
-	  top: 100%;
+	  top: 90%;
 		left: 50%;
-		margin-top: 40px;
 		transform: translate(-50%, -50%);
 	}
 
@@ -151,7 +160,7 @@ body {
 		margin-left: 10px;
 	  grid-template-columns: 100px 100px 100px;
 	  padding: 10px;
-		top: 76%;
+		top: 77%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}

@@ -1,0 +1,171 @@
+* {
+	font-family: 'Roboto Condensed', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #eff3ff;
+}
+
+
+@media (min-width: 1100px) {
+
+.container {
+	width: 350px;
+	position: absolute;
+	top: 43%;
+	left: 33%;
+	transform: translate(-50%, -50%);
+	margin-right: 30px;
+}
+
+#card {
+	width: 100%;
+	padding: 30px 20px;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 1em;
+}
+
+#card img {
+	display: block;
+	width: 200px;
+	max-height: 250px;
+	position: relative;
+	margin: 20px auto;
+}
+
+#types {
+	position: absolute;
+	display: grid;
+	margin-top: 10px;
+	margin-left: 10px;
+  grid-template-columns: 100px 100px 100px;
+  padding: 10px;
+	top: 50%;
+	left: 65%;
+	transform: translate(-50%, -50%);
+}
+
+.typeButton {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 20px;
+  color: #ffffff;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.types {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 40px 0;
+}
+
+.types span {
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: #ffffff;
+  border: 1px solid black;
+}
+
+}
+
+.poke-name {
+	text-align: center;
+}
+
+
+.stats {
+	position: absolute;
+	grid-row-gap: 15px;
+	display: grid;
+	top: 22%;
+	left: 61%;
+	transform: translate(-50%, -50%);
+}
+
+
+@media (max-width: 1200px) { 
+   .page {
+   		display: grid;
+  		grid-template-columns: 1fr;
+   }
+
+   .page div {
+	 		grid-row-start: 1;
+	 		grid-column-start: 1;
+		}
+
+		.stats {
+			position: absolute;
+			grid-row-gap: 0px;
+			display: grid;
+			top: 10%;
+			left: 20%;
+			margin-top: 0px;
+		}
+
+		#card {
+			position: absolute;
+			display: grid;
+			top: 15%;
+			left: 22%;
+			width: 50%;
+			margin: 1rem;
+		}
+
+		#card img {
+			display: block;
+			width: 180px;
+			max-height: 200px;
+			position: relative;
+			margin: auto;
+			margin-bottom: 0px;
+		}
+
+
+	.types {
+		position: absolute;
+		display: flex;
+	  top: 100%;
+		left: 50%;
+		margin-top: 40px;
+		transform: translate(-50%, -50%);
+	}
+
+	.types span {
+	  padding: 5px 20px;
+	  border-radius: 20px;
+	  color: #ffffff;
+	  border: 1px solid black;
+	}
+
+	#types {
+		position: absolute;
+		display: grid;
+		margin-top: 10px;
+		margin-left: 10px;
+	  grid-template-columns: 100px 100px 100px;
+	  padding: 10px;
+		top: 76%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.typeButton {
+	  margin-right: 15px;
+	  margin-bottom: 15px;
+	  padding: 5px;
+	  text-align: center;
+	  border-radius: 20px;
+	  color: #ffffff;
+	  border: 1px solid black;
+	  cursor: pointer;
+	}
+
+
+}

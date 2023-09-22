@@ -45,13 +45,17 @@ let getSelectedType = (e) => {
 	} else {
 		lives--;
 		livesSpan.innerHTML = lives;
-		checkLoss();
+		checkLoss(type1, type2);
 	}
 };
 
-let checkLoss = () => {
+let checkLoss = (type1, type2) => {
 	if(lives < 1){
-		if(!alert('You lost😊')){window.location.reload();}
+		if(type2 !== null){
+			if(!alert(`It was ${type1.innerHTML} / ${type2.innerHTML}. You lost😊`)){window.location.reload();}
+		}else{
+			if(!alert(`It was ${type1.innerHTML}. You lost😊`)){window.location.reload();}
+		}
 	}
 }
 
@@ -69,7 +73,9 @@ let checkWin = (count, type2) => {
 		pokemonGuessed++;
 		guessedCountSpan.innerHTML = pokemonGuessed;
 		checkGameWon();
+		card.style.borderColor = 'green';
 		setTimeout(function(){
+			card.style.borderColor = 'black';
     	getPokeData();
 		}, 1000);
 	} else if(type2 === null && count === 1) {
@@ -77,7 +83,9 @@ let checkWin = (count, type2) => {
 		pokemonGuessed++;
 		guessedCountSpan.innerHTML = pokemonGuessed;
 		checkGameWon();
+		card.style.borderColor = 'green';
 		setTimeout(function(){
+			card.style.borderColor = 'black';
     	getPokeData();
 		}, 1000);
 	}

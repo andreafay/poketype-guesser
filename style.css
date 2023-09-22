@@ -5,7 +5,7 @@
 }
 
 body {
-	background-color: #eff3ff;
+	background-color: #fffdd0;
 }
 
 
@@ -23,7 +23,7 @@ body {
 #card {
 	width: 100%;
 	padding: 30px 20px;
-	border: 1px solid black;
+	border: 3px solid black;
 	border-radius: 10px;
 	margin: 1em;
 }

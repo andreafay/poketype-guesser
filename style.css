@@ -8,88 +8,6 @@ body {
 	background-color: #fffdd0;
 }
 
-
-@media (min-width: 1100px) {
-
-.container {
-	width: 350px;
-	position: absolute;
-	top: 43%;
-	left: 33%;
-	transform: translate(-50%, -50%);
-	margin-right: 30px;
-}
-
-#card {
-	width: 100%;
-	padding: 30px 20px;
-	border: 3px solid black;
-	border-radius: 10px;
-	margin: 1em;
-}
-
-#card img {
-	display: block;
-	width: 200px;
-	max-height: 250px;
-	position: relative;
-	margin: 20px auto;
-}
-
-#types {
-	position: absolute;
-	display: grid;
-	margin-top: 10px;
-	margin-left: 10px;
-  grid-template-columns: 100px 100px 100px;
-  padding: 10px;
-	top: 50%;
-	left: 65%;
-	transform: translate(-50%, -50%);
-}
-
-.typeButton {
-  margin-right: 15px;
-  margin-bottom: 15px;
-  padding: 5px;
-  text-align: center;
-  border-radius: 20px;
-  color: #ffffff;
-  border: 1px solid black;
-  cursor: pointer;
-}
-
-.types {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px 0 40px 0;
-}
-
-.types span {
-  padding: 5px 20px;
-  border-radius: 20px;
-  color: #ffffff;
-  border: 1px solid black;
-}
-
-}
-
-.poke-name {
-	text-align: center;
-}
-
-
-.stats {
-	position: absolute;
-	grid-row-gap: 15px;
-	display: grid;
-	top: 22%;
-	left: 61%;
-	transform: translate(-50%, -50%);
-}
-
-
-@media (max-width: 1200px) { 
    .page {
    		display: grid;
   		grid-template-columns: 1fr;
@@ -114,14 +32,24 @@ body {
 			margin-top: 0px;
 		}
 
+		.record {
+			position: absolute;
+			grid-row-gap: 0px;
+			display: grid;
+			top: 10%;
+			left: 68%;
+			margin-top: 0px;
+		}
+
 		#card {
 			position: absolute;
 			display: grid;
 			border: 3px solid black;
 			border-radius: 10px;
 			top: 15%;
-			left: 22%;
+			left: 37.5%;
 			width: 50%;
+			max-width: 350px;
 			height: 268px;
 			margin: 1rem;
 			margin-top: 30px;
@@ -134,7 +62,7 @@ body {
 			position: relative;
 			margin: auto;
 			margin-top: 0px;
-			margin-bottom: 10px;
+			margin-bottom: 45px;
 		}
 
 
@@ -176,5 +104,93 @@ body {
 	  cursor: pointer;
 	}
 
+
+	@media (max-width: 800px) { 
+   .page {
+   		display: grid;
+  		grid-template-columns: 1fr;
+  		background-color: black;
+   }
+
+   .page div {
+	 		grid-row-start: 1;
+	 		grid-column-start: 1;
+		}
+
+		.poke-name {
+			margin-top: 20px;
+			text-align: center;
+		}
+
+		.stats {
+			position: absolute;
+			grid-row-gap: 0px;
+			display: grid;
+			top: 10%;
+			left: 20%;
+			margin-top: 0px;
+		}
+
+		#card {
+			position: absolute;
+			display: grid;
+			border: 3px solid black;
+			border-radius: 10px;
+			top: 15%;
+			left: 22%;
+			width: 50%;
+			height: 268px;
+			margin: 1rem;
+			margin-top: 30px;
+		}
+
+		#card img {
+			display: block;
+			width: 180px;
+			max-height: 220px;
+			position: relative;
+			margin: auto;
+			margin-top: 0px;
+			margin-bottom: 45px;
+		}
+
+
+	.types {
+		position: absolute;
+		display: flex;
+	  top: 90%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.types span {
+	  padding: 5px 20px;
+	  border-radius: 20px;
+	  color: #ffffff;
+	  border: 1px solid black;
+	}
+
+	#types {
+		position: absolute;
+		display: grid;
+		margin-top: 10px;
+		margin-left: 10px;
+	  grid-template-columns: 100px 100px 100px;
+	  padding: 10px;
+		top: 77%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.typeButton {
+	  margin-right: 15px;
+	  margin-bottom: 15px;
+	  padding: 5px;
+	  text-align: center;
+	  border-radius: 20px;
+	  color: #ffffff;
+	  border: 1px solid black;
+	  cursor: pointer;
+	}
 
 }

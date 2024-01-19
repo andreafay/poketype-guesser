@@ -23,13 +23,17 @@ const url = "https://pokeapi.co/api/v2/pokemon/";
 const card = document.getElementById("card");
 const typesContainer = document.getElementById("types");
 const typeButtons = document.getElementsByClassName("typeButton");
-let livesSpan = document.getElementById("lives");
-let guessedCountSpan = document.getElementById("guessedCount"); 
+const livesSpan = document.getElementById("lives");
+const guessedCountSpan = document.getElementById("guessedCount");
+const record = document.getElementById("record"); 
+const minusOne = document.getElementById("minusOne");
+const plusOne = document.getElementById("plusOne");
 
 let alreadyGeneratedTypes = false;
 let typesGuessed = 0;
 let lives = 3;
 let pokemonGuessed = 0;
+let recordCount;
 
 let getSelectedType = (e) => {
 	const type1 = document.getElementById("type0");
@@ -44,16 +48,22 @@ let getSelectedType = (e) => {
 		checkWin(typesGuessed, type2);
 	} else {
 		lives--;
+		setTimeout(function(){
+			minusOne.style.display = 'none';
+		}, 1000);
+		minusOne.style.display = 'inline';
 		livesSpan.innerHTML = lives;
-		checkLoss(type1, type2);
+		checkLoss(type1, type2, pokemonGuessed);
 	}
 };
 
-let checkLoss = (type1, type2) => {
-	if(lives < 1){
+let checkLoss = (type1, type2, pokemonGuessed) => {
+	if(lives < 0){
 		if(type2 !== null){
+			checkRecord(pokemonGuessed);
 			if(!alert(`It was ${type1.innerHTML} / ${type2.innerHTML}. You lost😊`)){window.location.reload();}
 		}else{
+			checkRecord(pokemonGuessed);
 			if(!alert(`It was ${type1.innerHTML}. You lost😊`)){window.location.reload();}
 		}
 	}
@@ -70,6 +80,10 @@ let checkGameWon = () => {
 let checkWin = (count, type2) => {
 	if(type2 !== null && count === 2){
 		typesGuessed = 0;
+		plusOne.style.display = 'inline';
+		setTimeout(function(){
+			plusOne.style.display = 'none';
+		}, 1000);
 		pokemonGuessed++;
 		guessedCountSpan.innerHTML = pokemonGuessed;
 		checkGameWon();
@@ -80,19 +94,32 @@ let checkWin = (count, type2) => {
 		}, 1000);
 	} else if(type2 === null && count === 1) {
 		typesGuessed = 0;
+		plusOne.style.display = 'inline';
+		setTimeout(function(){
+			plusOne.style.display = 'none';
+		}, 1000);
 		pokemonGuessed++;
 		guessedCountSpan.innerHTML = pokemonGuessed;
 		checkGameWon();
 		card.style.borderColor = 'green';
 		setTimeout(function(){
-			card.style.borderColor = 'black';
+			card.style.borderColor = 'inline';
     	getPokeData();
 		}, 1000);
 	}
 }
 
+let checkRecord = (count) => {
+	if(count > recordCount){
+		localStorage.setItem('myRecord', count);
+		recordCount = count;
+		record.innerHTML = recordCount;
+	}
+}
 
 let getPokeData = () => {
+	recordCount = localStorage.getItem('myRecord');
+	record.innerHTML = recordCount;
 	let id = Math.floor(Math.random() * 1017) + 1;
 	
 	const finalUrl = url + id;

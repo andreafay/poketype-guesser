@@ -103,7 +103,7 @@ let checkWin = (count, type2) => {
 		checkGameWon();
 		card.style.borderColor = 'green';
 		setTimeout(function(){
-			card.style.borderColor = 'inline';
+			card.style.borderColor = 'black';
     	getPokeData();
 		}, 1000);
 	}
